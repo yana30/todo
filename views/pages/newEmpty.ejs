@@ -1,0 +1,60 @@
+<%- partial('../homepage.ejs') %>
+
+
+<div class="container todoDiv">
+
+  <h5>Active List</h5>
+
+  <h2>No items on the list!</h2>
+  <br>
+  <a href="/todo/create/" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Add item</a>
+  </br>
+
+
+</div>
+
+
+<div class="container todoDiv">
+
+
+  <table class="table table-bordered">
+
+    <h5>Completed List</h5>
+    <thead>
+    <thead class="p-3 mb-2 bg-info text-white">
+
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Item</th>
+      <th scope="col">Owner</th>
+      <!--<th scope="col">Status</th>-->
+      <th scope="col">Completed on</th>
+      <th scope="col"></th>
+
+    </tr>
+    </thead>
+    <tbody>
+
+    <% for(var i=0; i<completed_records.length; i++) {%>
+
+    <tr>
+
+      <td width="5%"scope="row"><%= i+1 %></td>
+      <td width="30%"><%= completed_records[i].item%></td>
+      <td width="25%"><%= completed_records[i].owner%></td>
+      <!--<td><%= completed_records[i].status%></td>-->
+      <td><%= completed_records[i].updatedAt.toDateString() %></td>
+
+      <td width="25%" ><a href="/todo/return/<%= completed_records[i].id%>" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Return to list</a>
+        <a href="/todo/delete/<%= completed_records[i].id%>" class="btn btn-danger btn-sm active confirm" role="button" aria-pressed="true">Delete</a>
+      </td>
+
+    </tr>
+
+    <% } %>
+
+    </tbody>
+
+  </table>
+
+</div>>

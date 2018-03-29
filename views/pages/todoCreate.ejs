@@ -1,0 +1,16 @@
+<%- partial('../homepage.ejs') %>
+
+
+<div class="container todoDiv">
+
+<form action="/todo/create" method="post">
+  <fieldset>
+    Item:<br>
+    <input type="text" name="item" size="50" required><br>
+    Owner:<br>
+    <input type="text" name="owner" required><br><br>
+    <input type="submit" class="btn btn-primary btn-sm active" value="Save">
+  </fieldset>
+</form>
+
+</div>

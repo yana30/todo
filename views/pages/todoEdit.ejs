@@ -1,0 +1,16 @@
+<%- partial('../homepage.ejs') %>
+
+<div class="container todoDiv">
+
+
+<form action="/todo/update/<%=record[0].id%>" method="post">
+  <fieldset>
+    Item:<br>
+    <input type="text" name="item" size="50" value = <%=record[0].item%> <br><br>
+    Owner:<br>
+    <input type="text" name="owner" value = <%=record[0].owner%> <br><br><br>
+    <input type="submit" class="btn btn-primary btn-sm active" value="Save">
+  </fieldset>
+</form>
+
+</div>
